@@ -41,4 +41,4 @@ And the app is running on http://localhost:5000
 
 ## Deploying to Azure VM's
 
-
+To deploy the VMs it is necessary to obtain the IP address of each of VM's of the load balancer, the instructions to achieve this are found in the file 'Ansible/get-hosts-tasks.yml'
