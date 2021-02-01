@@ -23,4 +23,9 @@ The result of this is the creation of the infrastructure defined at the beginnin
 ![alt text](https://raw.githubusercontent.com/edalonzoh90/DevOpsChallenge/master/Media/img01.png)
 
 ## Deploying App
-Once the infrastructure is created, the script for the deployment is in 
+Once the infrastructure is created, the script for the deployment is in 'Ansible/app.yml'
+Into 'Ansible' folder, run
+
+```
+ansible-playbook app.yml
+```
