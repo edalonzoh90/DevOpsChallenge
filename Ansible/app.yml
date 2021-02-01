@@ -6,9 +6,9 @@
     workspace: ~/src/helloworld
     resource_group: "Terraform"
 
-  #tasks:
+  tasks:
   #- include: get-hosts-tasks.yml
-
+  #Required packages for run the application 
   - name: Install Packages
     apt: name={{ item }} update_cache=yes state=latest
     with_items:
@@ -17,18 +17,22 @@
       - git
       - curl
 
+  #For daemonize and monitor the app
   - name: Install pm2
     npm: name=pm2 global=yes production=yes
 
+  #For download the app from Github
   - name: Git Clone sample app
     git:
       repo: "{{ repo_url }}"
       dest: "{{ workspace }}"
   
+  #Install required packages
   - name: Running NPM install
     npm: path={{ workspace }}/
     register: npm_finished
 
+  #Configuring PM2 daemon
   - name: Stop APP
     command: pm2 stop app chdir={{ workspace }}
     ignore_errors: yes
