@@ -1,3 +1,4 @@
 # DevOpsChallenge
 
-test
+##Infrastructure##
+In the file 'Terraform/main.tf'
