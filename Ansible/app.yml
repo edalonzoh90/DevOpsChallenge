@@ -1,0 +1,46 @@
+- hosts: localhost
+  gather_facts: no
+
+  vars:
+    repo_url: https://github.com/abkunal/Chat-App-using-Socket.io.git
+    workspace: ~/src/helloworld
+    resource_group: "Terraform"
+    scaleset_name: "myScaleSet"
+    loadbalancer_name: "LoadBalancer"
+    admin_username: "edalonzoh@outlook.com"
+    admin_password: "D@ny2020o"
+
+  #pre_tasks:
+  #- name: 'install python'
+  #  raw: 'sudo apt install python3 python3-pip'
+
+  tasks:
+  - include: get-hosts-tasks.yml
+
+  - name: Install Packages
+    apt: name={{ item }} update_cache=yes state=latest
+    with_items:
+      - npm
+      - nodejs
+      - git
+      - curl
+
+  - name: Install pm2
+    npm: name=pm2 global=yes production=yes
+
+  - name: Git Clone sample app
+    git:
+      repo: "{{ repo_url }}"
+      dest: "{{ workspace }}"
+  
+  - name: Running NPM install
+    npm: path={{ workspace }}/
+    register: npm_finished
+
+  - name: Stop APP
+    command: pm2 stop app chdir={{ workspace }}
+    ignore_errors: yes
+    
+  - name: Start APP
+    command: pm2 start app.js --name app chdir={{ workspace }}
+    ignore_errors: yes

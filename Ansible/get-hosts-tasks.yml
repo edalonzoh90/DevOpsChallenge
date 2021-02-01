@@ -1,0 +1,21 @@
+- name: Get facts for all Public IPs within a resource groups
+  azure_rm_publicipaddress_facts:
+    resource_group: "Terraform"
+  register: output_ip_address
+
+- name: Get loadbalancer info
+  azure_rm_loadbalancer_facts:
+    resource_group: "Terraform"
+    name: "LoadBalancer"
+  register: output
+
+- name: Add all hosts
+  add_host:
+    groups: scalesethosts
+    hostname: "{{ output_ip_address.publicipaddresses[0].ip_address }}_{{ item.properties.frontendPort }}"
+    ansible_host: "{{ output_ip_address.publicipaddresses[0].ip_address }}"
+    ansible_port: "{{ item.properties.frontendPort }}"
+    ansible_ssh_user: "testadmin"
+    ansible_ssh_pass: "Password1234!"
+  with_items:
+    - "{{ output.ansible_info.azure_loadbalancers[0].properties.inboundNatRules }}"
