@@ -22,5 +22,20 @@ Terraform apply
 The result of this is the creation of the infrastructure defined at the beginning.
 ![alt text](https://raw.githubusercontent.com/edalonzoh90/DevOpsChallenge/master/Media/img01.png)
 
-## Deploying App
-Once the infrastructure is created, the script for the deployment is in 
+## Test the Deploying Script
+_Require Ansible installed in the host_
+
+Once the infrastructure is created, the script for the deployment is in 'Ansible/app.yml'
+Into 'Ansible' folder, run:
+```
+ansible-playbook app.yml
+```
+The result of this, is the application deployed in the local computer.
+You will see that the source code is downloaded in your home
+![alt text](https://raw.githubusercontent.com/edalonzoh90/DevOpsChallenge/master/Media/img02.png)
+And the app is running on http://localhost:5000 
+![alt text](https://raw.githubusercontent.com/edalonzoh90/DevOpsChallenge/master/Media/img02.png)
+
+## Deploying to Azure VM's
+
+
