@@ -30,3 +30,4 @@ Into 'Ansible' folder, run:
 ```
 ansible-playbook app.yml
 ```
+The result of this, is the application deployed in local way.
