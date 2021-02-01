@@ -5,17 +5,9 @@
     repo_url: https://github.com/abkunal/Chat-App-using-Socket.io.git
     workspace: ~/src/helloworld
     resource_group: "Terraform"
-    scaleset_name: "myScaleSet"
-    loadbalancer_name: "LoadBalancer"
-    admin_username: "edalonzoh@outlook.com"
-    admin_password: "D@ny2020o"
 
-  #pre_tasks:
-  #- name: 'install python'
-  #  raw: 'sudo apt install python3 python3-pip'
-
-  tasks:
-  - include: get-hosts-tasks.yml
+  #tasks:
+  #- include: get-hosts-tasks.yml
 
   - name: Install Packages
     apt: name={{ item }} update_cache=yes state=latest
