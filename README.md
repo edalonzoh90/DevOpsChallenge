@@ -20,6 +20,6 @@ Terraform apply
 ```
 
 The result of this is the creation of the infrastructure defined at the beginning.
-![alt text](https://raw.githubusercontent.com/edalonzo90/DevOpsChallenge/master/media/img01.png)
+![alt text](https://raw.githubusercontent.com/edalonzoh90/DevOpsChallenge/master/media/img01.png)
 
 
