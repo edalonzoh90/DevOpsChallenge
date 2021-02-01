@@ -1,30 +1,24 @@
- 
+#Created with Terraform && Azure Cloud If credentials are required, please contact me!
 provider "azurerm" {
-    subscription_id = "e5b7492c-0279-4a1f-9696-51440ab6c36f"
-    client_id = "90de4526-b67e-4982-ac0f-2992c036de73"
-    client_secret = "EOeb2R64XOh9px-6rk.KkElm1qi5NQh8wG"
-    tenant_id = "e5260716-3b00-45e1-bc25-3ebf5037ebf8"
+    subscription_id = "##############"
+    client_id = "##############"
+    client_secret = "#############"
+    tenant_id = "#############"
     features {}
 }
 
+#Resource group
+resource "azurerm_resource_group" "example" {
+  name     = "Terraform"
+  location = "East US"
+}
 
-#resource "azurerm_resource_group" "example" {
-  #name     = "Terraform"
-  #location = "East US"
-#}
-
+#VPC
 resource "azurerm_virtual_network" "main" {
 name                = "network-demo"
 resource_group_name = "Terraform"
 location            = "East US"
 address_space       = ["10.0.0.0/16"]
-}
-
-resource "azurerm_subnet" "internal1" {
-name                    = "subnet1"
-resource_group_name     = "Terraform"
-virtual_network_name    = "${azurerm_virtual_network.main.name}"
-address_prefix          = "10.0.1.0/24"
 }
 
 resource "azurerm_public_ip" "public1" {
@@ -41,6 +35,15 @@ resource "azurerm_availability_set" "web_av_set" {
   resource_group_name          = "Terraform"
 }
 
+#Subnet 1
+resource "azurerm_subnet" "internal1" {
+name                    = "subnet1"
+resource_group_name     = "Terraform"
+virtual_network_name    = "${azurerm_virtual_network.main.name}"
+address_prefix          = "10.0.1.0/24"
+}
+
+#NIC for VM1
 resource "azurerm_network_interface" "main1" {
 name                = "vm-01-nic"
 location            = "East US"
@@ -54,6 +57,7 @@ resource_group_name = "Terraform"
     }
 }
 
+#Load Balancer
 resource "azurerm_lb" "loadbalancer" {
   name                = "LoadBalancer"
   location            = "East US"
@@ -66,7 +70,7 @@ resource "azurerm_lb" "loadbalancer" {
   }
 }
 
-
+#VM1
 resource "azurerm_virtual_machine" "main1" {
 name                                = "vm-01"
 location                            = "East US"
@@ -103,6 +107,7 @@ availability_set_id = "${azurerm_availability_set.web_av_set.id}"
     }
 }
 
+#Subnet 2
 resource "azurerm_subnet" "internal2" {
 name                    = "subnet2"
 resource_group_name     = "Terraform"
@@ -110,6 +115,7 @@ virtual_network_name    = "${azurerm_virtual_network.main.name}"
 address_prefix          = "10.0.2.0/24"
 }
 
+#NIC for VM2
 resource "azurerm_network_interface" "main2" {
 name                = "vm-02-nic"
 location            = "East US"
@@ -123,6 +129,7 @@ resource_group_name = "Terraform"
     }
 }
 
+#VM2
 resource "azurerm_virtual_machine" "main2" {
 name                                = "vm-02"
 location                            = "East US"
@@ -158,6 +165,7 @@ availability_set_id = "${azurerm_availability_set.web_av_set.id}"
     }
 }
 
+#Asociating VM1 and VM2 to LoadBalancer
 resource "azurerm_lb_backend_address_pool" "backend_pool1" {
   resource_group_name = "Terraform"
   loadbalancer_id     = "${azurerm_lb.loadbalancer.id}"
