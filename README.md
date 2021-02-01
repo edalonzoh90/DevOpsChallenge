@@ -3,7 +3,7 @@ Infrastructure automation and deployment of a Node base application on Azure Clo
 
 ## Challenge
 
--Create 2  azure cloud VM's into a VPC.
+- Create 2  azure cloud VM's into a VPC.
 
 -Use a load balancer to dristribute the traffic
 
