@@ -20,3 +20,5 @@ Terraform apply
 ```
 
 The result of this is the creation of the infrastructure defined at the beginning.
+
+
