@@ -4,6 +4,7 @@ Infrastructure automation and deployment of a Node base application on Azure Clo
 ## Challenge
 
 _Create 2  azure cloud VM's into a VPC.
+
 _For infraestructure use Terraform, for app deploy use Ansible
 _
 _Use a load balancer to dristribute the traffic
