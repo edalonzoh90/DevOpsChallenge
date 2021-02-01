@@ -11,8 +11,12 @@ Infrastructure automation and deployment of a Node base application on Azure Clo
 'Terraform/Main.tf' contains all the necessary instructions for the creation of the infrastructure via Terraform.
 _It required to get the parameters from the cloud provider. For this, it is necessary to create a "Service Principal" that helps us to authenticate the Terraform application._
 
+Into 'Terraform' folder, run:
+
 ```
 Terraform init
 Terraform plan
 Terraform apply
 ```
+
+The result of this is the creation of the infrastructure defined at the beginning.
