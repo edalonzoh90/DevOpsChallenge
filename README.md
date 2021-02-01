@@ -43,4 +43,4 @@ And the app is running on http://localhost:5000
 
 To deploy the VMs it is necessary to obtain the IP address of each of VM's of the load balancer, the instructions to achieve this are found in the file 'Ansible/get-hosts-tasks.yml'
 
-Unfortunately I had some compatibility problems with some Python packages that Ansible required, so I could not do the test, and therefore conclude with the challenge...
+Unfortunately I had some compatibility problems with some Python packages that Ansible required, so I could not do the test, and therefore conclude with the challenge... :disappointed_relieved:
