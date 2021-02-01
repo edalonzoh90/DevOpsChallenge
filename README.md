@@ -34,7 +34,7 @@ The result of this, is the application deployed in the local computer.
 You will see that the source code is downloaded in your home
 ![alt text](https://raw.githubusercontent.com/edalonzoh90/DevOpsChallenge/master/Media/img02.png)
 And the app is running on http://localhost:5000 
-![alt text](https://raw.githubusercontent.com/edalonzoh90/DevOpsChallenge/master/Media/img02.png)
+![alt text](https://raw.githubusercontent.com/edalonzoh90/DevOpsChallenge/master/Media/img03.png)
 
 ## Deploying to Azure VM's
 
