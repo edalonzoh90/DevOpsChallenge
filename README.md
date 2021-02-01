@@ -24,8 +24,8 @@ The result of this is the creation of the infrastructure defined at the beginnin
 
 ## Deploying App
 Once the infrastructure is created, the script for the deployment is in 'Ansible/app.yml'
-Into 'Ansible' folder, run
-
+Into 'Ansible' folder, run:
+_Require Ansible installed in the host_
 ```
 ansible-playbook app.yml
 ```
