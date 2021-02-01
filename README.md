@@ -1,4 +1,4 @@
-# DevOpsChallenge
+# DevOps Challenge
 Infrastructure automation and deployment of a Node base application on Azure Cloud VM, using Terraform and Ansible
 
 ## Challenge
@@ -7,4 +7,6 @@ Infrastructure automation and deployment of a Node base application on Azure Clo
 - Use a load balancer to dristribute the traffic
 - Deploy a node.js base app into this 2 VM's 
 
-##Infrastructure
+## Creating Infrastructure
+'Terraform/Main.tf' contains all the necessary instructions for the creation of the infrastructure via Terraform.
+It required to get the parameters from the cloud provider. For this, it is necessary to create a "main service" that helps us to authenticate the Terraform application.
