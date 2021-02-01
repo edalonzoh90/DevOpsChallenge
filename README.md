@@ -20,6 +20,6 @@ Terraform apply
 ```
 
 The result of this is the creation of the infrastructure defined at the beginning.
-![alt text](master/media/img01.png)
+![alt text](media/img01.png)
 
 
