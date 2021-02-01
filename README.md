@@ -22,4 +22,5 @@ Terraform apply
 The result of this is the creation of the infrastructure defined at the beginning.
 ![alt text](https://raw.githubusercontent.com/edalonzoh90/DevOpsChallenge/master/Media/img01.png)
 
-
+## Deploying App
+Once the infrastructure is created, the script for the deployment is in 
