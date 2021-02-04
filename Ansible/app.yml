@@ -7,7 +7,7 @@
     resource_group: "Terraform"
 
   tasks:
-  #- include: get-hosts-tasks.yml
+  - include: get-hosts-tasks.yml
   #Required packages for run the application 
   - name: Install Packages
     apt: name={{ item }} update_cache=yes state=latest
