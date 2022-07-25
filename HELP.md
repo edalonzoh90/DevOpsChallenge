@@ -35,3 +35,4 @@ __Ports in use__
 [Tutorial: Setting Up Node.js on an Amazon EC2 Instance](https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/setting-up-node-on-ec2-instance.html)  
 [Deploying a Node.js app using Ansible](https://medium.com/nonstopio/deploying-a-node-js-app-using-ansible-cfe7dfeddcac)  
 [Installing Apache on Ansible](https://www.scaleway.com/en/docs/tutorials/install-apache-ansible/)  
+[Learn DevOps: Infrastructure Automation With Terraform](https://www.udemy.com/course/learn-devops-infrastructure-automation-with-terraform/)
