@@ -11,11 +11,11 @@ variable "AWS_REGION" {
 }
 
 variable "PATH_TO_PRIVATE_KEY" {
-  default = "~/Documents/ssh/mykey"
+  default = "[UPDATE ~/Documents/ssh/mykey]"
 }
 
 variable "PATH_TO_PUBLIC_KEY" {
-  default = "~/Documents/ssh/mykey.pub"
+  default = "[UPDATE ~/Documents/ssh/mykey.pub]"
 }
 
 variable "AMIS" {
