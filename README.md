@@ -21,3 +21,6 @@
 5. Located into `~/2 Ansible/` folder, run:  
 `ansible-playbook playbook.yml -i inventory.txt`  
 6. The deploy is ready, open in a browser the load balancer url :blush:
+
+
+![Alt text](Infraestructure.png?raw=true "Infraestructure diagram")
