@@ -1,2 +1,4 @@
 [ec2]
-3.84.92.132 ansible_ssh_private_key_file=~/Documents/ssh/mykey ansible_user=ubuntu
+[EC2_Public_ip_1] ansible_ssh_private_key_file=~/Documents/ssh/mykey ansible_user=ubuntu
+[EC2_Public_ip_2] ansible_ssh_private_key_file=~/Documents/ssh/mykey ansible_user=ubuntu
+
